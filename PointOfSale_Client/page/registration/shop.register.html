@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>WeB STAR</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- jquery -->
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/popper.min.js"></script>
+	
+	<!-- bootstrap -->
+	<script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+	
+	<!-- custom css and js -->
+	<link rel="stylesheet" href="../../css/registration/shop.register.css">
+</head>
+
+<body class="" style="background-color:#f5deb3;">
+	<!-- Page header-->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12 bg-info header">
+				<label>
+					<span>
+						<img src="../../image/logo.png" class="logo rounded-circle" height="30px">
+					</span>
+					<b>WeB STAR</b>
+					<button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="collapse" data-target="#menu-bar">
+					</button>
+				</label>
+				<div class="btn-group" style="float:right;">
+					<button type="button" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+						<img src="../../image/admin.png" class="rounded-circle" style="height:30px;">
+						<span><label style="color:white;">Owner</label></span>
+					</button>
+					<div class="dropdown-menu bg-info dropdown-menu-right" id="profile">
+						<table>
+							<tr>
+								<th colspan="2">
+									<img src="../../image/admin.png" class="rounded-circle mx-auto d-block" alt="User Image" style="height:100px;">
+								</th>
+							</tr>
+							<tr class="bg-secondary">
+								<th>
+									<a href="#" class="btn btn-info">Profile</a>
+								</th>
+								<th>
+									<a href="../../index.html" class="btn btn-info">Logout</a>
+								</th>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Page menu bar -->
+	<div class="container collapse" id="menu-bar">
+		<div class="row">
+			<div class="col-md-12 bg-info menu-bar">
+				<nav class="navbar navbar-expand-sm bg-success navbar-dark">
+					<a href="../../index.html">
+						<img src="../../image/home/home.png" class="rounded-circle" height="30px">
+					</a>	
+					<div class="btn-group">
+						<button type="button" class="btn btn-success">Registration</button>
+						<button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+						<div class="dropdown-menu dropdown-menu-right">
+							<a class="dropdown-item" href="owner.register.html">Owner</a>
+							<a class="dropdown-item" href="#">Shop</a>
+							<a class="dropdown-item" href="employee.register.html">Employee</a>
+						</div>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-success">Help</button>
+						<button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+						<div class="dropdown-menu dropdown-menu-right">
+							<a class="dropdown-item" href="#">User guide</a>
+							<a class="dropdown-item" href="#">Development team</a>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+
+	<!-- Page footer -->
+	<div class="container fixed-bottom bg-info" style="height:20px; border-radius:0 0 50px 50px;">
+		<h6 align="center">Page footer</h6>
+	</div>
+</body>
+</html>

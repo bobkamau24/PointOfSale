@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>WeB STAR</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- jquery -->
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/popper.min.js"></script>
+	
+	<!-- bootstrap -->
+	<script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+	
+	<!-- custom css and js -->
+	<script type="text/javascript" src="../../js/sale/sale.history.js"></script>
+	<link rel="stylesheet" href="../../css/sale/sale.history.css">
+</head>
+
+<body>
+	<!-- Page header-->
+	<div class="container-fluid bg-info header">
+		<div class="row">
+			<div class="col-md-12">
+				<label>
+					<span>
+						<img src="../../image/logo.png" class="logo rounded-circle" height="30px">
+					</span>
+					<b>WeB STAR</b>
+					<button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="collapse" data-target="#menu-bar">
+					</button>
+				</label>
+				<div class="btn-group" style="float:right;">
+					<button type="button" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+						<img src="../../image/admin.png" class="rounded-circle" style="height:30px;">
+						<span><label style="color:white;" id="staffName">Manager</label></span>
+					</button>
+					<div class="dropdown-menu bg-info dropdown-menu-right" id="profile">
+						<table>
+							<tr>
+								<th colspan="2">
+									<img src="../../image/admin.png" class="rounded-circle mx-auto d-block" alt="User Image" style="height:100px;">
+								</th>
+							</tr>
+							<tr class="bg-secondary">
+								<th>
+									<a href="#" class="btn btn-info">Profile</a>
+								</th>
+								<th>
+									<a href="../login.html" class="btn btn-info">Logout</a>
+								</th>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Page menu bar -->
+	<div class="container menu-bar bg-info collapse" id="menu-bar">
+		<div class="row">
+			<div class="col-md-12">
+				<nav class="navbar navbar-expand-sm bg-info navbar-dark">
+					<a href="../home/home.html">
+						<img src="../../image/home/home.png" class="rounded-circle" height="30px">
+					</a>	
+					<div class="btn-group">
+						<button type="button" class="btn btn-info">Sale</button>
+						<button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+						<div class="dropdown-menu dropdown-menu-right">
+							<a class="dropdown-item" href="../sale/sell.html">Sell</a>
+							<a class="dropdown-item" href="../sale/sale.history.html">Sale History</a>
+							<a class="dropdown-item" href="../sale/cash.management.html">Cash Management</a>
+							<a class="dropdown-item" href="../sale/status.html">Status</a>
+						</div>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-info">Purchase</button>
+						<button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+						<div class="dropdown-menu dropdown-menu-right">
+							<a class="dropdown-item" href="../purchase/purchase.html">Purchase</a>
+							<a class="dropdown-item" href="../purchase/purchase.history.html">Purchase History</a>
+							<a class="dropdown-item" href="../purchase/purchase.management.html">Purchase Management</a>
+						</div>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-info">Product</button>
+						<button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+						<div class="dropdown-menu dropdown-menu-right">
+							<a class="dropdown-item" href="../product/product.html">Product</a>
+							<a class="dropdown-item" href="../product/product.management.html">Product Management</a>
+						</div>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-info">Customer</button>
+						<button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+						<div class="dropdown-menu dropdown-menu-right">
+							<a class="dropdown-item" href="../customer/customer.html">Customer</a>
+							<a class="dropdown-item" href="../customer/customer.management.html">Customer Management</a>
+						</div>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-info">Supplier</button>
+						<button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+						<div class="dropdown-menu dropdown-menu-right">
+							<a class="dropdown-item" href="../supplier/supplier.html">Supplier</a>
+							<a class="dropdown-item" href="../supplier/supplier.management.html">Supplier Management</a>
+						</div>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-info">Creditor</button>
+						<button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+						<div class="dropdown-menu dropdown-menu-right">
+							<a class="dropdown-item" href="#">Creditor</a>
+							<a class="dropdown-item" href="#">Creditor Management</a>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container-fluid">
+		<!-- This is body area -->
+		<div class="row body" id="body">
+			<!-- This is home -->
+			<div class="col-md-12 content" id="home">
+				<div class="row">
+					<div class="col-md-12">
+						<br>
+						<h4>Find all sales for customer.</h4>
+					</div>
+				</div><br>
+				<div class="row" style="max-height:500px; overflow:scroll;">
+					<div class="col-md-12">
+						<table class="table table-striped">
+							<thead style="background-color:green; color:white;">
+								<tr>
+									<th>Date</th>
+									<th>Receipt</th>
+									<th>Sold_By</th>
+									<th>Customer</th>
+									<th>Note</th>
+									<th>Sale_Total</th>
+									<th>Status</th>
+								</tr>
+							</thead>
+							<tbody id="tableBody">
+								<thread>
+									<!-- Here will be show sale history information -->
+								</thread>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Page footer -->
+	<div class="container-fluid fixed-bottom bg-info" style="color:white; border-radius:15px 15px 0 0;">
+		<div class="row">
+			<div class="col-md-12">
+				<h6 style="text-align:center; margin:0; padding:0;">Developed by Kyaw Kyaw Aung (UCSMub - B.C.Sc)</h6>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

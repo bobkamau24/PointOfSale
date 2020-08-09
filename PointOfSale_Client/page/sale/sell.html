@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>WeB STAR</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- jquery -->
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/popper.min.js"></script>
+	
+	<!-- bootstrap -->
+	<script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+	
+	<!-- Custom javascript and css -->
+	<script type="text/javascript" src="../../js/sale/sell.js"></script>
+	<link rel="stylesheet" href="../../css/sale/sell.css">
+</head>
+
+<body>
+	<!-- Page header-->
+	<div class="container-fluid bg-info header">
+		<div class="row">
+			<div class="col-md-12">
+				<label>
+					<span>
+						<img src="../../image/logo.png" class="logo rounded-circle" height="30px">
+					</span>
+					<b>WeB STAR</b>
+					<button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="collapse" data-target="#menu-bar">
+					</button>
+				</label>
+				<div class="btn-group" style="float:right;">
+					<button type="button" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+						<img src="../../image/admin.png" class="rounded-circle" style="height:30px;">
+						<span><label style="color:white;" id="staffName">Manager</label></span>
+					</button>
+					<div class="dropdown-menu bg-info dropdown-menu-right" id="profile">
+						<table>
+							<tr>
+								<th colspan="2">
+									<img src="../../image/admin.png" class="rounded-circle mx-auto d-block" alt="User Image" style="height:100px;">
+								</th>
+							</tr>
+							<tr class="bg-secondary">
+								<th>
+									<a href="#" class="btn btn-info">Profile</a>
+								</th>
+								<th>
+									<a href="../login.html" class="btn btn-info">Logout</a>
+								</th>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Page menu bar -->
+	<div class="container menu-bar bg-info collapse" id="menu-bar">
+		<div class="row">
+			<div class="col-md-12">
+				<nav class="navbar navbar-expand-sm bg-info navbar-dark">
+					<a href="../home/home.html">
+						<img src="../../image/home/home.png" class="rounded-circle" height="30px">
+					</a>	
+					<div class="btn-group">
+						<button type="button" class="btn btn-info">Sale</button>
+						<button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+						<div class="dropdown-menu dropdown-menu-right">
+							<a class="dropdown-item" href="../sale/sell.html">Sell</a>
+							<a class="dropdown-item" href="../sale/sale.history.html">Sale History</a>
+							<a class="dropdown-item" href="../sale/cash.management.html">Cash Management</a>
+							<a class="dropdown-item" href="../sale/status.html">Status</a>
+						</div>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-info">Purchase</button>
+						<button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+						<div class="dropdown-menu dropdown-menu-right">
+							<a class="dropdown-item" href="../purchase/purchase.html">Purchase</a>
+							<a class="dropdown-item" href="../purchase/purchase.history.html">Purchase History</a>
+							<a class="dropdown-item" href="../purchase/purchase.management.html">Purchase Management</a>
+						</div>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-info">Product</button>
+						<button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+						<div class="dropdown-menu dropdown-menu-right">
+							<a class="dropdown-item" href="../product/product.html">Product</a>
+							<a class="dropdown-item" href="../product/product.management.html">Product Management</a>
+						</div>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-info">Customer</button>
+						<button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+						<div class="dropdown-menu dropdown-menu-right">
+							<a class="dropdown-item" href="../customer/customer.html">Customer</a>
+							<a class="dropdown-item" href="../customer/customer.management.html">Customer Management</a>
+						</div>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-info">Supplier</button>
+						<button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+						<div class="dropdown-menu dropdown-menu-right">
+							<a class="dropdown-item" href="../supplier/supplier.html">Supplier</a>
+							<a class="dropdown-item" href="../supplier/supplier.management.html">Supplier Management</a>
+						</div>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-info">Creditor</button>
+						<button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+						<div class="dropdown-menu dropdown-menu-right">
+							<a class="dropdown-item" href="#">Creditor</a>
+							<a class="dropdown-item" href="#">Creditor Management</a>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Page content -->
+	<div class="container-fluid" style="margin-top:1px; margin-bottom:20px;">
+		<!-- First area -->
+		<div class="row" id="firstArea">
+			<div class="col-md-6">
+				<form>
+					<div class="input-group mb-3">
+						<div class="input-group-append">
+							<button class="btn btn-success">Product List</button> 
+						</div>
+						<div class="input-group-prepend">
+							<span class="input-group-text">@</span>
+						</div>
+						<input type="text" class="form-control" placeholder="Enter Product ID or Name" id="searchProduct" onkeyup="SearchProduct();" autofocus>
+					</div>
+					<div style="min-height:250px; max-height:250px; overflow: scroll;" id="saleProduct">
+						<!-- Here will be show sale product -->
+					</div>
+					<div>
+						<table class="table">
+							<tr>
+								<td><label>Subtotal</label></td>
+								<td style="text-align:center;"><label>$ <span id="subtotal">0.00</span></label></td>
+							</tr>
+							<tr>
+								<td><label>Tax ($)</label></td>
+								<td><input type="number" style="text-align:center;" min="0" value="0.00" class="form-control" id="txtTax" onchange="CalculatePay();"></td>
+							</tr>
+							<tr>
+								<td><label>Discount (%) </label></td>
+								<td><input type="number" style="text-align:center;" min="0" max="100" value="0.00" class="form-control" id="txtDiscount" onchange="CalculatePay();"></td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<button type="button" class="btn-success form-control" onclick="Pay();">
+										<span>Total <label id="items">0</label> Items $ <strong><label id="btnTotal">0.00</label></strong></span>
+									</button>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-6">
+				<div style="min-height:555px; max-height:560px; overflow:scroll;">
+					<table class="table table-info table-striped" id="saleProductTable">
+						<thead class="thead-dark">
+							<tr>
+								<th>ID</th>
+								<th>ProductName</th>
+								<th>Quantity</th>
+								<th>Amount</th>
+								<th>Delete</th>
+								<th>Edit</th>
+							</tr>
+						</thead>
+						<tbody id="saleProductTableBody">
+							<thread>
+								<!-- Here will be show sale summary -->
+							</thread>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!-- Second area -->
+		<div class="row body" id="secondArea">
+			<!-- This is pay  -->
+			<div class="col-md-6">
+				<form>
+					<table class="table table-stripped">
+						<tr>
+							<th></th>
+							<th style="text-align:right; cursor:pointer;"><h5 onclick="FirstArea();"><b>&lArr; Back to Sale</b></h5></th>
+						</tr>
+						<tr>
+							<th>Subtotal</th>
+							<td id="smSubtotal" align="center"></td>
+						</tr>
+						<tr>
+							<th>Tax</th>
+							<td id="smTax" align="center"></td>
+						</tr>
+						<tr>
+							<th>Discount</th>
+							<td id="smDiscount" align="center"></td>
+						</tr>
+						<tr>
+							<th><label><b>TOTAL</b></label>&nbsp;<label id="smItems">&nbsp;0&nbsp;</label> items</th>
+							<td id="smTotal" align="center"></td>
+						</tr>
+						<tr>
+							<th><label><b>Paid</b></label></th>
+							<td><input type="number" min="0" class="form-control" value="0.00" style="text-align:center;" id="txtPaid" autofocus></td>
+						</tr>
+						<tr>
+							<td colspan="2"><button type="button" class="form-control btn btn-success" style="background-color:green; color:white" onclick="CalculateRepay();">Cash</button></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<!-- This is sale summary -->
+			<div class="col-md-6">
+				<div style="max-height:555px; overflow:scroll; background-color:white;">
+					<table class="table table-stripped" id="saleSummaryProductTable">
+						<thead style="background-color:green; color:white;">
+							<tr>
+								<th>ID</th>
+								<th>ProductName</th>
+								<th>Quantity</th>
+								<th>Amount</th>
+							</tr>
+						</thead>
+						<tbody id="saleSummaryProductTableBody">
+							<thread>
+								<!-- Here will be show sale summary -->
+							</thread>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Page footer -->
+	<div class="container-fluid fixed-bottom bg-info" style="color:white; border-radius:15px 15px 0 0;">
+		<div class="row">
+			<div class="col-md-12">
+				<h6 style="text-align:center; margin:0; padding:0;">Developed by Kyaw Kyaw Aung (UCSMub - B.C.Sc)</h6>
+			</div>
+		</div>
+	</div>
+	
+	<!-- This is Modal area -->
+	<div class="container">
+		<!-- Cash Sale Modal -->
+		<div class="modal fade" role="dialog" id="cashSaleModal">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header bg-success">
+						<label class="modal-title" style="color:white;"><b>Done Your Cash Sale Process!</b></label>
+						<button type="button" class="close" onclick="ClearCashSaleModal();">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form>
+							<table class="table table-stripped">
+								<tr>
+									<th style="text-align:center;"><h1><b>Repay $ <label id="lblRepay">0.00</label></b></h1></th>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-success btn-md" onclick="CreateSale();">Done ESC!</button>
+						<button type="button" class="btn btn-warning btn-md" onclick="ClearCashSaleModal();">Cancle</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Credit Sale Modal -->
+		<div class="modal fade" role="dialog" id="creditSaleModal">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header bg-success">
+						<label class="modal-title" style="color:white;"><b>Done Your Credit Sale Process!</b></label>
+						<button type="button" class="close" onclick="ClearCreditSaleModal();">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form>
+							<table class="table table-stripped">
+								<tr>
+									<th colspan="2" style="text-align:center;"><h1><b>Credit $ <label id="lblCredit">0.00</label></b></h1></th>
+								</tr>
+								<tr>
+									<th><label>Customer Name</label></th>
+									<td><input type="text" class="form-control" id="customerName"></td>
+								</tr>
+								<tr>
+									<th><label>Contact Number</label></th>
+									<td><input type="text" class="form-control" id="customerContact"></td>
+								</tr>
+								<tr>
+									<th colspan="2"><label>If you want to add more information about customer, please <a href="page/registration/customer.register.html">Add Info</a>.</label></th>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-success btn-md" onclick="CreateSale();">Done ESC!</button>
+						<button type="button" class="btn btn-warning btn-md" onclick="ClearCreditSaleModal();">Cancle</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

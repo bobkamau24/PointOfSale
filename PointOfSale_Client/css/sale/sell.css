@@ -1,0 +1,35 @@
+body {
+	background-color:silver;
+	font-family: "Time News Roman";
+}
+
+.header{
+	border-radius:0 0 15px 15px;
+	color: white;
+}
+
+.menu-bar{
+	border-radius:0 0 10px 10px;
+}
+
+.navbar{
+	margin: 0;
+	padding: 0;
+}
+
+.dropdown-menu{
+	background-color:silver;
+}
+
+.logo{
+	animation: rotation 9s infinite linear;
+}
+
+@keyframes rotation{
+	from{
+		transform: rotate(0deg);
+	}
+	to{
+		transform: rotate(359deg);
+	}
+}

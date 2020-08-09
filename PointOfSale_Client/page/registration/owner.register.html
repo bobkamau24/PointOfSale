@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>WeB STAR</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- jquery -->
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/popper.min.js"></script>
+	
+	<!-- bootstrap -->
+	<script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+	
+	<!-- custom css and js -->
+	<script type="text/javascript" src="../../js/registration/owner.register.js"></script>
+	<link rel="stylesheet" href="../../css/registration/owner.register.css">
+</head>
+
+<body class="" style="background-color:#f5deb3;">
+	<!-- Page header-->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12 bg-info header">
+				<label>
+					<span>
+						<img src="../../image/logo.png" class="logo rounded-circle" height="30px">
+					</span>
+					<b>WeB STAR</b>
+					<button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="collapse" data-target="#menu-bar">
+					</button>
+				</label>
+				<div class="btn-group" style="float:right;">
+					<button type="button" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+						<img src="../../image/admin.png" class="rounded-circle" style="height:30px;">
+						<span><label style="color:white;">Owner</label></span>
+					</button>
+					<div class="dropdown-menu bg-info dropdown-menu-right" id="profile">
+						<table>
+							<tr>
+								<th colspan="2">
+									<img src="../../image/admin.png" class="rounded-circle mx-auto d-block" alt="User Image" style="height:100px;">
+								</th>
+							</tr>
+							<tr class="bg-secondary">
+								<th>
+									<a href="#" class="btn btn-info">Profile</a>
+								</th>
+								<th>
+									<a href="../../index.html" class="btn btn-info">Logout</a>
+								</th>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Page menu bar -->
+	<div class="container collapse" id="menu-bar">
+		<div class="row">
+			<div class="col-md-12 bg-info menu-bar">
+				<nav class="navbar navbar-expand-sm bg-success navbar-dark">
+					<a href="../../index.html">
+						<img src="../../image/home/home.png" class="rounded-circle" height="30px">
+					</a>	
+					<div class="btn-group">
+						<button type="button" class="btn btn-success">Registration</button>
+						<button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+						<div class="dropdown-menu dropdown-menu-right">
+							<a class="dropdown-item" href="#">Owner</a>
+							<a class="dropdown-item" href="shop.register.html">Shop</a>
+							<a class="dropdown-item" href="employee.register.html">Employee</a>
+						</div>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-success">Help</button>
+						<button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+						<div class="dropdown-menu dropdown-menu-right">
+							<a class="dropdown-item" href="#">User guide</a>
+							<a class="dropdown-item" href="#">Development team</a>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ownerRegisterModal">Register</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Page footer -->
+	<div class="container fixed-bottom bg-info" style="height:20px; border-radius:0 0 50px 50px;">
+		<h6 align="center">Page footer</h6>
+	</div>
+
+	<!-- This is Modal area -->
+	<div class="container">
+		<!-- Owner Register Modal -->
+		<div class="modal fade" role="dialog" id="ownerRegisterModal">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header bg-success">
+						<label class="modal-title" style="color:white;"><b>Owner Registration!</b></label>
+						<button type="button" class="close" onclick="ClearOwnerRegisterModal();">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form role="form">
+							<table class="table table-stripped" style="text-align:left;">
+								<tr>
+									<th><label>Owner Name</label></th>
+									<td><input type="text" class="form-control" id="ownerName" autofocus></td>
+								</tr>
+								<tr>
+									<th><label>Owner Email</label></th>
+									<td><input type="text" class="form-control" id="ownerEmail"></td>
+								</tr>
+								<tr>
+									<th><label>Owner Password</label></th>
+									<td><input type="password" class="form-control" id="ownerPassword"></td>
+								</tr>
+								<tr>
+									<th><label>Retype Password</label></th>
+									<td><input type="password" class="form-control" id="reOwnerPassword"></td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<label>Note <span>(optional)</span></label>
+										<input type="text" class="form-control" id="ownerNote">
+									</td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-success btn-md" onclick="OwnerRegister();">Register</button>
+						<button type="button" class="btn btn-warning btn-md" onclick="ClearOwnerRegisterModal();">Cancle</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

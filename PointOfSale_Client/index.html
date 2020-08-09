@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>WeB STAR</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- jquery -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+<!-- 	<script type="text/javascript" src="js/popper.min.js"></script>
+ -->	
+	<!-- bootstrap -->
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	
+	<!-- custom css and js -->
+	<script type="text/javascript" src="index.js"></script>
+	<link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<input type="password" maxlength="8" onkeypress="CheckStore(event, this);" id="passcode" autofocus>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<img src="image/logo.png">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<label><b>Let's start <a href="#" onclick="Register();">register</a> for your store or shop on ours <a href="#" onclick="Register();">WeB STAR</a>.</b></label>
+			</div>
+		</div>
+	</div>
+
+	<!-- This is Modal area -->
+	<div class="container">
+		<!-- Open Register Modal -->
+		<div class="modal fade" role="dialog" id="openRegisterModal">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header bg-success">
+						<label class="modal-title" style="color:white;"><b>Open Your Shop!</b></label>
+						<button type="button" class="close" onclick="ClearOpenRegisterModal();">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form role="form">
+							<table class="table table-stripped" style="text-align:left;">
+								<tr>
+									<th><label>Opening amount</label></th>
+									<td><input type="number" min="0" class="form-control" id="openingAmount"></td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<input type="text" placeholder="Opening note (optional)" class="form-control" id="openingNote">
+									</td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-success btn-md" onclick="OpenRegister();">Open Shop</button>
+						<button type="button" class="btn btn-warning btn-md" onclick="ClearOpenRegisterModal();">Cancle</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Owner Sign in Modal -->
+		<div class="modal fade" role="dialog" id="ownerSignInModal">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header bg-success">
+						<label class="modal-title" style="color:white;"><b>Sign in!</b></label>
+						<button type="button" class="close" onclick="ClearOwnerSignInModal();">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form role="form">
+							<table class="table table-stripped" style="text-align:left;">
+								<tr>
+									<th><label>Owner Email</label></th>
+									<td><input type="email" class="form-control" id="ownerEmail"></td>
+								</tr>
+								<tr>
+									<th><label>Owner Password</label></th>
+									<td><input type="password" class="form-control" id="ownerPassword"></td>
+								</tr>
+								<tr>
+									<th colspan="2"><label>If you don't have an owner account, please <a href="page/registration/owner.register.html">register</a>.</label></th>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-success btn-md" onclick="OwnerSignIn();">Sign in</button>
+						<button type="button" class="btn btn-warning btn-md" onclick="ClearOwnerSignInModal();">Cancle</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
