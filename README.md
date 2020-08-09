@@ -1,0 +1,2 @@
+# PointOfSale
+Django Project
